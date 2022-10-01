@@ -4,12 +4,21 @@ import java.time.LocalDate;
 import java.util.Objects;
 
 public class User {
+    private Integer id;
     private String email;
     private String nickname;
     private LocalDate birthdate;
 
     public String getEmail() {
         return email;
+    }
+
+    public void setId(Integer id) {
+        this.id = id;
+    }
+
+    public Integer getId() {
+        return id;
     }
 
     public void setEmail(String email) {

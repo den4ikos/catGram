@@ -35,4 +35,9 @@ public class UserController {
     public User put(@RequestBody User user) {
         return userService.update(user);
     }
+
+    @GetMapping("/users/{userId}")
+    public User findById(@PathVariable("userId") Integer id) {
+        return userService.findById(id);
+    }
 }
