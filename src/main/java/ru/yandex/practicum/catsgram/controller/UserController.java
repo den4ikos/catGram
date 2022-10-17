@@ -10,6 +10,7 @@ import ru.yandex.practicum.catsgram.service.UserService;
 import java.util.Collection;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Optional;
 
 @RestController
 @RequestMapping("/users")
@@ -39,5 +40,10 @@ public class UserController {
     @GetMapping("/users/{userId}")
     public User findById(@PathVariable("userId") Integer id) {
         return userService.findById(id);
+    }
+
+    @GetMapping("/{login}")
+    public Optional<User> getUser(@PathVariable String login) {
+        return userService.findUserByLogin(login);
     }
 }
